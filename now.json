@@ -9,7 +9,7 @@
   ],
   "build": {
     "env": {
-      "VUE_APP_SPOTIFY_CLIENT_ID": "@spotify-client-id"
+      "VUE_APP_SPOTIFY_CLIENT_ID": "47fa7a96945142d6851c536e4469cd20"
     }
   },
   "routes": [
