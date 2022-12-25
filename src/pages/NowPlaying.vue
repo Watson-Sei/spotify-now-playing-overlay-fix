@@ -5,6 +5,7 @@
     :showArtist="showArtist"
     :showAlbumArt="showAlbumArt"
     :showSpotifyLogo="showSpotifyLogo"
+    :showBackground="showBackground"
     :accessToken="accessToken"
   />
 </template>
@@ -19,16 +20,21 @@ export default {
     showArtist: true,
     showAlbumArt: true,
     showSpotifyLogo: true,
-    accessToken: null
+    showBackground: true,
+    accessToken: null,
   }),
 
   mounted () {
-    const { showArtist, showAlbumArt, showSpotifyLogo, accessToken } = this.$route.query
 
-    this.showArtist = Boolean(showArtist)
-    this.showAlbumArt = Boolean(showAlbumArt)
-    this.showSpotifyLogo = Boolean(showSpotifyLogo)
+    const {showBackground, showArtist, showAlbumArt, showSpotifyLogo, accessToken} = this.$route.query;
+
+    console.log(this.$route.query)
+
+    this.showArtist = JSON.parse(showArtist.toLowerCase())
+    this.showAlbumArt = JSON.parse(showAlbumArt.toLowerCase())
+    this.showSpotifyLogo = JSON.parse(showSpotifyLogo.toLowerCase())
     this.accessToken = accessToken
-  }
+    this.showBackground = JSON.parse(showBackground.toLowerCase())
+  },
 }
 </script>

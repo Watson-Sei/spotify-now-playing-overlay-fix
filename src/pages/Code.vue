@@ -54,6 +54,20 @@
                 />
               </div>
             </div>
+
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <p>背景透明にするのかしないのか？<br/>どっちないんだい？</p>
+                </div>
+              </div>
+
+              <div class="level-right">
+                <b-switch 
+                  v-model="settings.showBackground"
+                />
+              </div>
+            </div>
           </div>
 
           <div class="column">
@@ -70,6 +84,7 @@
                 class="widget"
                 :showAlbumArt="settings.showAlbumArt"
                 :showArtist="settings.showArtist"
+                :showBackground="settings.showBackground"
                 :showSpotifyLogo="settings.showSpotifyLogo"
                 :accessToken="accessToken"
               />
@@ -118,7 +133,8 @@ export default {
     settings: {
       showSpotifyLogo: true,
       showAlbumArt: true,
-      showArtist: true
+      showArtist: true,
+      showBackground: true,
     }
   })
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="media">
+  <div class="media" :class="{'media-background': showBackground}">
     <div
       class="media-left"
       v-show="showAlbumArt"
@@ -17,10 +17,11 @@
     </div>
 
     <div class="media-content">
-      <p class="is-size-4 has-text-white">{{ trackName }}</p>
+      <p class="is-size-4 has-text-black" :class="{'media-font-color': showBackground}">{{ trackName }}</p>
 
       <p
-        class="is-size-6 has-text-white"
+        class="is-size-6 has-text-black"
+        :class="{'media-font-color': showBackground}"
         v-show="showArtist"
       >
         {{ artistName }}
@@ -49,6 +50,11 @@ export default {
   components: { PreloadedImage },
 
   props: {
+    showBackground: {
+      type: Boolean,
+      default: true
+    },
+
     showArtist: {
       type: Boolean,
       default: true
@@ -119,11 +125,18 @@ export default {
 
 <style lang="scss" scoped>
 .media {
-  background: black;
   border-radius: 4px;
   padding: 1rem;
 
   align-items: center;
+}
+
+.media-font-color {
+  color: white !important
+}
+
+.media-background {
+  background: black;
 }
 
 .media-content {
