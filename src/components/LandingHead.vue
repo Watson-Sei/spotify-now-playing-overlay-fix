@@ -7,7 +7,7 @@
             <img src="@/assets/svg/spotify-logo.svg" alt="Spotify Logo">
           </div>
 
-          <p class="is-size-3">Overlay for OBS &amp; XSplit</p>
+          <p class="is-size-3">Overlay for OBS &amp; XSplit for icy</p>
 
           <p
             v-show="showLoginButton"

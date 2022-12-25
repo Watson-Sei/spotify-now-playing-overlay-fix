@@ -119,7 +119,7 @@ export default {
 
 <style lang="scss" scoped>
 .media {
-  background: rgba(10, 10, 10, 0.75);
+  background: black;
   border-radius: 4px;
   padding: 1rem;
 
