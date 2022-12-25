@@ -6,11 +6,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "now-build": "vue-cli-service build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "gh-pages": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
