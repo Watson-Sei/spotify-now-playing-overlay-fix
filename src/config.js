@@ -1,5 +1,5 @@
 module.exports = {
   spotify: {
-    clientId: process.env.VUE_APP_SPOTIFY_CLIENT_ID
+    clientId: "47fa7a96945142d6851c536e4469cd20"
   }
 }

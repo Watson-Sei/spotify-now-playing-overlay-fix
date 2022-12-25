@@ -18,7 +18,7 @@ export default {
       const redirectUri = `${location.origin}${codePage.href}`
 
       const queryParams = {
-        client_id: process.env.VUE_APP_SPOTIFY_CLIENT_ID,
+        client_id: "47fa7a96945142d6851c536e4469cd20",
         redirect_uri: redirectUri,
         response_type: 'token',
         scope: 'user-read-currently-playing'
