@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "spotify-now-playing-overlay",
-  "alias": ["spotify-overlay.raphaelmarco.com"],
+  "alias": ["watson-sei.github.io"],
   "builds": [
     {
       "src": "package.json",
