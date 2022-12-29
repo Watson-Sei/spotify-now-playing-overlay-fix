@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import vuetify from '@/plugins/vuetify'
 import Switch from 'buefy/dist/components/switch'
 
 import axios from 'axios'
@@ -15,5 +16,6 @@ Vue.use(Switch)
 new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  vuetify
 })

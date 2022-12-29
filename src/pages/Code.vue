@@ -68,6 +68,22 @@
                 />
               </div>
             </div>
+
+            <div class="level is-mobile">
+              <div class="level-left">
+                <p>背景色</p>
+              </div>
+            </div>
+
+            <div class="level-right">
+              <v-row>
+                <v-col 
+                  class="d-flex justify-center"
+                >
+                  <v-color-picker v-model="color"></v-color-picker>
+                </v-col>
+              </v-row>
+            </div>
           </div>
 
           <div class="column">
@@ -86,6 +102,7 @@
                 :showArtist="settings.showArtist"
                 :showBackground="settings.showBackground"
                 :showSpotifyLogo="settings.showSpotifyLogo"
+                :colorBackground="showColor"
                 :accessToken="accessToken"
               />
             </div>
@@ -122,10 +139,24 @@ export default {
 
       const query = queryString.stringify({
         accessToken: this.accessToken,
-        ...this.settings
+        ...this.settings,
+        colorBackground: this.color
       })
 
       return `${base}?${query}`
+    }, 
+
+    color: {
+      get() {
+        return this[this.type]
+      },
+      set (v) {
+        this[this.type] = v
+      }
+    },
+
+    showColor() {
+      return this.color
     }
   },
 
@@ -135,7 +166,13 @@ export default {
       showAlbumArt: true,
       showArtist: true,
       showBackground: true,
-    }
+    },
+    type: 'hex',
+      hex: '#FF00FF',
+      hexa: '#FF00FFFF',
+      rgba: { r: 255, g: 0, b: 255, a: 1 },
+      hsla: { h: 300, s: 1, l: 0.5, a: 1 },
+      hsva: { h: 300, s: 1, v: 1, a: 1 },
   })
 }
 </script>

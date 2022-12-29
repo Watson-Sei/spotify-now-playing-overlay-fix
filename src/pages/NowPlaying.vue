@@ -7,6 +7,7 @@
     :showSpotifyLogo="showSpotifyLogo"
     :showBackground="showBackground"
     :accessToken="accessToken"
+    :colorBackground="colorBackground"
   />
 </template>
 
@@ -22,11 +23,12 @@ export default {
     showSpotifyLogo: true,
     showBackground: true,
     accessToken: null,
+    colorBackground: null
   }),
 
   mounted () {
 
-    const {showBackground, showArtist, showAlbumArt, showSpotifyLogo, accessToken} = this.$route.query;
+    const {showBackground, showArtist, showAlbumArt, showSpotifyLogo, accessToken, colorBackground} = this.$route.query;
 
     console.log(this.$route.query)
 
@@ -35,6 +37,7 @@ export default {
     this.showSpotifyLogo = JSON.parse(showSpotifyLogo.toLowerCase())
     this.accessToken = accessToken
     this.showBackground = JSON.parse(showBackground.toLowerCase())
+    this.colorBackground = colorBackground
   },
 }
 </script>

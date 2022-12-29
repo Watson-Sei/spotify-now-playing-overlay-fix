@@ -1,5 +1,5 @@
 <template>
-  <div class="media" :class="{'media-background': showBackground}">
+  <div class="media" :class="showBackground ? 'media-background' : ''">
     <div
       class="media-left"
       v-show="showAlbumArt"
@@ -50,6 +50,11 @@ export default {
   components: { PreloadedImage },
 
   props: {
+    colorBackground: {
+      type: String,
+      default: "#FF00FF"
+    },
+
     showBackground: {
       type: Boolean,
       default: true
@@ -131,12 +136,8 @@ export default {
   align-items: center;
 }
 
-.media-font-color {
-  color: white !important
-}
-
 .media-background {
-  background: black;
+  background: v-bind(colorBackground);
 }
 
 .media-content {
