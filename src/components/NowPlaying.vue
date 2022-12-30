@@ -1,5 +1,5 @@
 <template>
-  <div class="media" :class="showBackground ? 'media-background' : ''">
+  <div class="media" :class="showBackground ? 'media-background' : ''" :style="{opacity: opacity + '%'}">
     <div
       class="media-left"
       v-show="showAlbumArt"
@@ -53,6 +53,11 @@ export default {
     colorBackground: {
       type: String,
       default: "#FF00FF"
+    },
+
+    opacity: {
+      type: Number,
+      default: 100
     },
 
     showBackground: {

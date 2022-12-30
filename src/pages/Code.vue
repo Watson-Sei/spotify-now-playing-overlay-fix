@@ -69,20 +69,33 @@
               </div>
             </div>
 
-            <div class="level is-mobile">
-              <div class="level-left">
+            <div class="is-mobile" style="max-height: 400px">
+              <div>
                 <p>背景色</p>
+              </div>
+              <div>
+                <v-app style="max-height: 300px">
+                  <v-color-picker v-model="color"></v-color-picker>
+                </v-app>
               </div>
             </div>
 
-            <div class="level-right">
-              <v-row>
-                <v-col 
-                  class="d-flex justify-center"
-                >
-                  <v-color-picker v-model="color"></v-color-picker>
-                </v-col>
-              </v-row>
+            <div class="is-mobile" style="max-height: 400px">
+              <div>
+                透明度
+              </div>
+              <div>
+                <v-app style="max-height: 100px">
+                  <v-slider
+                    v-model="slider"
+                    thumb-label
+                    step="10"
+                    ticks="always"
+                    max="100"
+                    tick-size="10"
+                  ></v-slider>
+                </v-app>
+              </div>
             </div>
           </div>
 
@@ -103,6 +116,7 @@
                 :showBackground="settings.showBackground"
                 :showSpotifyLogo="settings.showSpotifyLogo"
                 :colorBackground="showColor"
+                :opacity="slider"
                 :accessToken="accessToken"
               />
             </div>
@@ -140,7 +154,8 @@ export default {
       const query = queryString.stringify({
         accessToken: this.accessToken,
         ...this.settings,
-        colorBackground: this.color
+        colorBackground: this.color,
+        opacity: this.slider
       })
 
       return `${base}?${query}`
@@ -168,11 +183,12 @@ export default {
       showBackground: true,
     },
     type: 'hex',
-      hex: '#FF00FF',
-      hexa: '#FF00FFFF',
-      rgba: { r: 255, g: 0, b: 255, a: 1 },
-      hsla: { h: 300, s: 1, l: 0.5, a: 1 },
-      hsva: { h: 300, s: 1, v: 1, a: 1 },
+    hex: '#FF00FF',
+    hexa: '#FF00FFFF',
+    rgba: { r: 255, g: 0, b: 255, a: 1 },
+    hsla: { h: 300, s: 1, l: 0.5, a: 1 },
+    hsva: { h: 300, s: 1, v: 1, a: 1 },
+    slider: 100,
   })
 }
 </script>
@@ -188,5 +204,9 @@ export default {
     left: 1rem;
     right: 1rem;
   }
+}
+
+.v-application--wrap {
+  min-height: 0 important;
 }
 </style>

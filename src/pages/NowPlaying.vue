@@ -8,6 +8,7 @@
     :showBackground="showBackground"
     :accessToken="accessToken"
     :colorBackground="colorBackground"
+    :opacity="slider"
   />
 </template>
 
@@ -23,7 +24,8 @@ export default {
     showSpotifyLogo: true,
     showBackground: true,
     accessToken: null,
-    colorBackground: null
+    colorBackground: null,
+    slider: 100
   }),
 
   mounted () {
@@ -38,6 +40,7 @@ export default {
     this.accessToken = accessToken
     this.showBackground = JSON.parse(showBackground.toLowerCase())
     this.colorBackground = colorBackground
+    this.opacity = opacity
   },
 }
 </script>
